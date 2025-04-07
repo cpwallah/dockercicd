@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "build": "tsc -b",
+  "dev:docker": "pnpm exec prisma generate && pnpm exec prisma migrate dev && node ./dist/index.js"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "6.5.0",
     "@types/express": "^5.0.1",
     "express": "^5.1.0",
     "prisma": "^6.5.0",
